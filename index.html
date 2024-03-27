@@ -32,31 +32,48 @@
             border-radius: 50%;
             height: 50px;
             width: 50px;
-            
+            cursor: pointer;
         }
         .btn-blue{
             background-color: #8ddbdb;
             border: 3px solid #319b9b;
+        }
+        .btn-blue:hover{
+            box-shadow: 0 0 10px 4px #8ddbdb;
         }
         .btn-green{
             background-color: #7ef1a4;
             border: 3px solid #0f8a38;
             margin-left: 20px;
         }
+        .btn-green:hover{
+            box-shadow: 0 0 10px 4px #7ef1a4;
+        }
         .btn-grey{
             background-color: #cccccc;
             border: 3px solid #737373;
             margin-left: 20px;
         }
+        .btn-grey:hover{
+            box-shadow: 0 0 10px 4px #cccccc;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="shirt-blue.png" class="shirt-img">
+        <img src="shirt-blue.png" class="shirt-img" id="shirt-img">
         <p class="txt">Choose color:</p>
-        <button class="btn btn-blue"></button>
-        <button class="btn btn-green"></button>
-        <button class="btn btn-grey"></button>
+        <button class="btn btn-blue" onclick="colorChange('blue')"></button>
+        <button class="btn btn-green" onclick="colorChange('green')"></button>
+        <button class="btn btn-grey" onclick="colorChange('grey')"></button>
     </div>
+
+    <script>
+        function colorChange(color){
+            const colorElement = document.getElementById('shirt-img');
+            colorElement.src=`shirt-${color}.png`
+            
+        }
+    </script>
 </body>
 </html>
